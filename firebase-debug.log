@@ -1,0 +1,25 @@
+[debug] [2024-07-21T06:56:46.958Z] ----------------------------------------------------------------------
+[debug] [2024-07-21T06:56:46.960Z] Command:       /home/decimal/.nvm/versions/node/v18.13.0/bin/node /home/decimal/.nvm/versions/node/v18.13.0/bin/firebase init
+[debug] [2024-07-21T06:56:46.960Z] CLI Version:   13.13.3
+[debug] [2024-07-21T06:56:46.960Z] Platform:      linux
+[debug] [2024-07-21T06:56:46.960Z] Node Version:  v18.13.0
+[debug] [2024-07-21T06:56:46.961Z] Time:          Sun Jul 21 2024 12:26:46 GMT+0530 (India Standard Time)
+[debug] [2024-07-21T06:56:46.961Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-07-21T06:56:47.036Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-07-21T06:56:47.037Z] > authorizing via signed-in user (chachanricha@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/decimal/Desktop/NetFlixGPT/netflix-gpt
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
