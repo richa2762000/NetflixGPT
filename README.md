@@ -16,11 +16,16 @@
   - second we will create slice
   - then i added the slice reducer onto my store
   - then i am providing my store in main app
-  - dispatch and navigate 
+  - dispatch and navigate
   - show the Header according the user selector
   - Implement Sign Out
   - Update Profile
-- Fetch from TMDB Movies
+- If user is not login so it should not redirect to browser page and vice-versa.
+- Fetch from TMDB Movies.
+- we get 2 times data in local console just because of "React.StrictMode", If we remove this so then we will get only one time data.
+  beacuse react does extra rendering of your components to check for some inconsistency between your calls.
+- now we will dispatch our movies into store.
+- After that we will create customHook for the browser.
 
 # Features
 
