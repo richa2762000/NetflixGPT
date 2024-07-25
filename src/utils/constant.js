@@ -11,3 +11,5 @@ export const API_OPTIONS = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YmJkNTI2NGE0YTU3YjZhYmE4MDhkY2VkOGM4OGNmNSIsIm5iZiI6MTcyMTY2Mzc4Mi4yNzA2ODUsInN1YiI6IjY2OWU3ZTY3YTdmYmNlYTY5NjhlZmExZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.22STPHH0Zi4_0YaE65HKM_lkgfxQcHtTTHjk_wNBlPo",
   },
 };
+
+export const youtubeEmbed = "https://www.youtube.com/embed/";

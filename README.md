@@ -26,6 +26,11 @@
   beacuse react does extra rendering of your components to check for some inconsistency between your calls.
 - now we will dispatch our movies into store.
 - After that we will create customHook for the browser.
+- create movieSlice
+- Update Store with movies Data , planning for MainContainer & secondary container.
+- Fetch data for trailer video.
+- update store with trailer video data.
+- embedded the youtube video and make it autoplay and mute.
 
 # Features
 

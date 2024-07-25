@@ -1,7 +1,6 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Browse from "./Browse";
 import Login from "./Login";
-import { useDispatch } from "react-redux";
+import Browse from "./Browser/Browse";
 
 const Body = () => {
   const appRouter = createBrowserRouter([

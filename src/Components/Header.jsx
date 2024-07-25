@@ -25,8 +25,15 @@ const Header = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in
-        const { uid, email, displayName,photoURL } = user;
-        dispatch(addUser({ uid: uid, email: email, displayName: displayName,photoURL:photoURL }));
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
         navigate("/browse");
       } else {
         // User is signed out
@@ -44,8 +51,8 @@ const Header = () => {
       </div>
       {user && (
         <div className="flex items-center space-x-4">
-          <h2 className="text-white font-bold">{user.displayName}{user.photoURL}</h2>
-          <img src={user.photoURL} alt="loading"/>
+          <h2 className="text-white font-bold">{user.displayName}</h2>
+          <img src={user.photoURL} alt="loading" />
           <button
             onClick={handleSignOut}
             className="text-white font-bold py-2 px-4 bg-red-500 rounded hover:bg-red-600 transition"
