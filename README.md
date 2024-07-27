@@ -32,23 +32,12 @@
 - update store with trailer video data.
 - embedded the youtube video and make it autoplay and mute.
 
-
 - for another popuplarMovies.
   - we will create a slice in movieSlice.
   - after that we will create hook for popular movie and fetch api and then we will dispatch our data.
   - after that we will update our store via import popluarmovies hook in the main browser.
   - next we will fetch data from the store via useSelector.
-# Features
-
-- Login/Sign UP
-  - Sign In/ Sign up Form
-  - redirect to Browse Page
-- Browse (after authentication)
-  - Header
-  - Main Movie
-    - Trailer in Background
-    - Title & Description
-    - MovieSuggestion
-- NetflixGPT
-  - Search Bar
-  - Suggestion
+- GPT search page
+- Gpt search bar
+- Add multilingual functionality
+- Integrate GPT API
