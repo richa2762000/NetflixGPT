@@ -5,6 +5,7 @@ import VideoTitle from "./VideoTitle";
 const MainContainer = () => {
   // Fetching data from the store
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
+
   if (movies === null) return null;
   const mainMovie = movies[0];
   const { original_title, overview, id } = mainMovie;
