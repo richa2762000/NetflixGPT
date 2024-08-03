@@ -1,12 +1,9 @@
 import OpenAI from "openai";
+import { OPENAI_KEY } from "./constant";
 
-// Access the API key from environment variables
-const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
-
-// Create an instance of the OpenAI client
 const openai = new OpenAI({
   apiKey: OPENAI_KEY,
-  dangerouslyAllowBrowser: true, // Note: Using this flag can be risky; ensure you understand the implications.
+  dangerouslyAllowBrowser:true
 });
 
 export default openai;
