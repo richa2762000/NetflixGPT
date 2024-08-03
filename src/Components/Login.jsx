@@ -127,7 +127,7 @@ const Login = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="w-full max-w-sm p-12 bg-black text-white rounded shadow-lg relative z-10"
+            className="w-full max-w-sm p-12 bg-black text-white rounded shadow-lg relative z-10 opacity-70"
           >
             <h2 className="text-xl font-semibold mb-4">
               {!isSignInForm ? "Sign Up" : "Sign In"}

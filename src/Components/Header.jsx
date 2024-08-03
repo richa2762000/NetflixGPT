@@ -74,43 +74,46 @@ const Header = () => {
         <img className="w-32 lg:w-44" src={headerLogo} alt="logo" />
       </div>
       <div>
-        <button className="text-white lg:hidden" onClick={toggleMenu}>
-          ☰
-        </button>
         {user && (
-          <div
-            className={`lg:flex ${
-              menuOpen ? "flex" : "hidden"
-            } flex-col items-center space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4`}
-          >
-            <h2 className="text-white font-bold text-sm lg:text-base">
-              {user.displayName}
-            </h2>
-            {showGptSearch && (
-              <select
-                className="p-2 m-2 bg-gray-900 text-white rounded lg:p-3"
-                onChange={handleLanguageChange}
+          <div>
+            <button className="text-white lg:hidden" onClick={toggleMenu}>
+              ☰
+            </button>
+
+            <div
+              className={`lg:flex ${
+                menuOpen ? "flex" : "hidden"
+              } flex-col items-center space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4`}
+            >
+              <h2 className="text-white font-bold text-sm lg:text-base">
+                {user.displayName}
+              </h2>
+              {showGptSearch && (
+                <select
+                  className="p-2 m-2 bg-gray-900 text-white rounded lg:p-3"
+                  onChange={handleLanguageChange}
+                >
+                  {SUPPORTED_LANGUAUES.map((lang) => (
+                    <option key={lang.identifier} value={lang.identifier}>
+                      {lang.name}
+                    </option>
+                  ))}
+                </select>
+              )}
+              <button
+                className="py-2 px-3 bg-gray-900 text-white rounded hover:bg-gray-700 transition duration-300 lg:px-4"
+                onClick={handleGptSearch}
               >
-                {SUPPORTED_LANGUAUES.map((lang) => (
-                  <option key={lang.identifier} value={lang.identifier}>
-                    {lang.name}
-                  </option>
-                ))}
-              </select>
-            )}
-            <button
-              className="py-2 px-3 bg-gray-900 text-white rounded hover:bg-gray-700 transition duration-300 lg:px-4"
-              onClick={handleGptSearch}
-            >
-              {showGptSearch ? "HomePage" : "GPT Search"}
-            </button>
-            
-            <button
-              onClick={handleSignOut}
-              className="text-white font-bold py-2 px-3 bg-red-500 rounded hover:bg-red-600 transition duration-300 lg:px-4"
-            >
-              Sign Out
-            </button>
+                {showGptSearch ? "HomePage" : "GPT Search"}
+              </button>
+
+              <button
+                onClick={handleSignOut}
+                className="text-white font-bold py-2 px-3 bg-red-500 rounded hover:bg-red-600 transition duration-300 lg:px-4"
+              >
+                Sign Out
+              </button>
+            </div>
           </div>
         )}
       </div>

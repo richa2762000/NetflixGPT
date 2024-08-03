@@ -11,6 +11,7 @@ const GptSearchMovies = () => {
   const langKey = useSelector((store) => store.lang.langConfig);
   const searchText = useRef(null);
   //   search movie in TMDB
+
   const searchMovieTMDB = async (movie) => {
     const data = await fetch(
       "https://api.themoviedb.org/3/search/movie?query=" +
@@ -21,8 +22,8 @@ const GptSearchMovies = () => {
     const json = await data.json();
     return json.results;
   };
+
   const handleGptSearch = async () => {
-    console.log(searchText.current.value);
     // setInput("");
     // make an api call to gpt api and get movie results
     const gptQuery =
@@ -34,13 +35,14 @@ const GptSearchMovies = () => {
       model: "gpt-3.5-turbo",
     });
 
-    console.log(gptResults.choices?.[0]?.message?.content);
     const gptMovies = gptResults.choices
       ? gptResults.choices?.[0]?.message?.content.split(",")
       : "no movie found";
     //   for each movie i will search TMDB API
+
     const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
     //  it will return promise not result because it async [Promise,Promise,Promise,Promise,Promise]
+
     const tmdbResults = await Promise.all(promiseArray);
     // promise.all -> it will wait for promisearray to get all the results
 
@@ -51,32 +53,32 @@ const GptSearchMovies = () => {
   };
 
   return (
-    <>
-      <div className="flex justify-center items-center min-h-screen bg-gray-100">
-        <div className="absolute inset-0">
-          <img
-            className="w-full h-full object-cover"
-            src={loginBgLogo}
-            alt="background"
-          />
-          <div className="absolute inset-0 bg-black opacity-50"></div>
-        </div>
+    <div className="relative flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="absolute inset-0">
+        <img
+          className="object-cover w-full h-full"
+          src={loginBgLogo}
+          alt="background"
+        />
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+      </div>
+      <div className="relative z-10 w-full max-w-md p-4 bg-black rounded-lg shadow-lg sm:p-6 md:p-8">
         <form
-          className="z-10 w-full max-w-md bg-black p-8 rounded-lg shadow-lg"
           onSubmit={(e) => e.preventDefault()}
+          className="flex flex-col space-y-4"
         >
-          <div className="mb-4 flex space-x-4">
+          <div className="flex flex-col sm:flex-row sm:space-x-4">
             <input
               type="text"
               ref={searchText}
-              className="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 sm:text-base"
               placeholder={lang[langKey].gptSearchPlaceholder}
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
             <button
               type="submit"
-              className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="mt-4 sm:mt-0 sm:w-32 px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
               onClick={handleGptSearch}
             >
               {lang[langKey].search}
@@ -84,7 +86,7 @@ const GptSearchMovies = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
