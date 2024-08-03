@@ -4,9 +4,11 @@ import useTrailerPlaying from "../../hooks/useTrailerPlaying";
 
 const VideoBackground = ({ movieId }) => {
   // fetching trailer video and updating the store with trailer video data.
+
   const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
 
   useTrailerPlaying(movieId);
+
   return (
     <div className="absolute inset-0 z-0">
       <iframe

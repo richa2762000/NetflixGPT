@@ -40,4 +40,15 @@
 - GPT search page
 - Gpt search bar
 - Add multilingual functionality
-- Integrate GPT API
+- Use platform.openai.com for Integrate GPT API
+- Install npm i openai
+- Get Open AI API KEY
+- Gpt search api ca;;
+- fetched gptMoviesSuggestions from TMDB
+- created gptsluce added data
+- Reused Movie list component to make movie suggestion container.
+- Memoization
+  - To stop the unnecessary network calls we use memoization beacuse already we store our data in redux so we dont need to call again and again.
+- Added .env file
+- Adding .env file to gitignore
+- Made our site Responsive.

@@ -1,11 +1,11 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../utils/constant";
 import { useCallback, useEffect } from "react";
 import { addPopularMovies } from "../utils/store/moviesSlice";
 
 const usePopularMovies = () => {
   const dispatch = useDispatch();
-
+  const popularMovies = useSelector((store) => store.movies.popularMovies);
   const getPopularMovies = useCallback(async () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1",
@@ -17,7 +17,7 @@ const usePopularMovies = () => {
   }, [dispatch]); // Dependency array with dispatch
 
   useEffect(() => {
-    getPopularMovies();
+    !popularMovies && getPopularMovies();
   }, [getPopularMovies]); // Dependency array with getPopularMovies
 };
 

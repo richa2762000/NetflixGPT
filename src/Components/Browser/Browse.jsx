@@ -13,10 +13,12 @@ const Browse = () => {
   // now i will dispatch my all movies into store
   // FEtch data from TMDB API and update store
   // we wil fetch our nowplaying and popular movies and we wil update our store
+
   useNowPlayingMovies();
   usePopularMovies();
   useTopRatedMovies();
   useUpcomingMovies();
+
   return (
     <>
       <Header />
