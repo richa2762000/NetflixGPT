@@ -62,7 +62,7 @@ const GptSearchMovies = () => {
         />
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
-      <div className="relative z-10 w-full max-w-md p-4 bg-black rounded-lg shadow-lg sm:p-6 md:p-8">
+      <div className="relative mt-24 z-10 w-full max-w-md p-4 bg-black rounded-lg shadow-lg sm:p-6 md:p-8">
         <form
           onSubmit={(e) => e.preventDefault()}
           className="flex flex-col space-y-4"

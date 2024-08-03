@@ -22,6 +22,7 @@ const Header = () => {
         navigate("/error");
       });
   };
+
   // we are using header in all the pages so thats why we are use here auth function
 
   useEffect(() => {
@@ -83,7 +84,7 @@ const Header = () => {
             <div
               className={`lg:flex ${
                 menuOpen ? "flex" : "hidden"
-              } flex-col items-center space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4`}
+              } flex-col lg:flex-row lg:space-x-4`}
             >
               <h2 className="text-white font-bold text-sm lg:text-base">
                 {user.displayName}
