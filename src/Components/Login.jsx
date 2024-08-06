@@ -168,14 +168,7 @@ const Login = () => {
               />
             )}
             <p className="text-red-600">{errorMessage}</p>
-            {isSignInForm && (
-              <div className="flex items-center mb-4">
-                <input type="checkbox" id="remember" className="mr-2" />
-                <label htmlFor="remember" className="text-gray-400">
-                  Remember Me
-                </label>
-              </div>
-            )}
+           
             <button
               className="cursor-pointer w-full py-2 bg-red-500 rounded text-white hover:bg-red-600 transition"
               onClick={handleButton}
