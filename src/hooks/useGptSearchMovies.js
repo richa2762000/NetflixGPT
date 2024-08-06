@@ -15,7 +15,7 @@ const useGptSearchMovies = ()=>{
       return json.results;
     };
     const handleGptSearch = async () => {
-      console.log(searchText.current.value);
+      // console.log(searchText.current.value);
       // setInput("");
       // make an api call to gpt api and get movie results
       const gptQuery =
@@ -27,7 +27,7 @@ const useGptSearchMovies = ()=>{
         model: "gpt-3.5-turbo",
       });
   
-      console.log(gptResults.choices?.[0]?.message?.content);
+      // console.log(gptResults.choices?.[0]?.message?.content);
       const gptMovies = gptResults.choices
         ? gptResults.choices?.[0]?.message?.content.split(",")
         : "no movie found";

@@ -12,7 +12,7 @@ const usePopularMovies = () => {
       API_OPTIONS
     );
     const json = await data.json();
-    console.log(json.results, "popular");
+    // console.log(json.results, "popular");
     dispatch(addPopularMovies(json.results));
   }, [dispatch]); // Dependency array with dispatch
 

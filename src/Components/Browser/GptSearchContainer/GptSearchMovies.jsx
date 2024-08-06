@@ -84,6 +84,8 @@ const GptSearchMovies = () => {
               {lang[langKey].search}
             </button>
           </div>
+          <p className="text-red-600 ml-2">Oops! Sorry... Your subscription is now expire.</p>
+
         </form>
       </div>
     </div>
