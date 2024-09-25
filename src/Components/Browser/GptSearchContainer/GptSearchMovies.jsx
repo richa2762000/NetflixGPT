@@ -8,10 +8,11 @@ import { addGptMovieResults } from "../../../utils/store/gptSlice";
 const GptSearchMovies = () => {
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
+  const[key,setKey] = useState("");
   const langKey = useSelector((store) => store.lang.langConfig);
   const searchText = useRef(null);
   //   search movie in TMDB
-
+const [text,setText] = useState("");
   const searchMovieTMDB = async (movie) => {
     const data = await fetch(
       "https://api.themoviedb.org/3/search/movie?query=" +
@@ -50,6 +51,7 @@ const GptSearchMovies = () => {
     dispatch(
       addGptMovieResults({ movieNames: gptMovies, movieResults: tmdbResults })
     );
+    setText("Oops! Sorry... Your subscription is now expire");
   };
 
   return (
@@ -84,7 +86,13 @@ const GptSearchMovies = () => {
               {lang[langKey].search}
             </button>
           </div>
-          <p className="text-red-600 ml-2">Oops! Sorry... Your subscription is now expire.</p>
+          <p className="text-red-600 ml-2">Oops! Sorry... Your subscription is now expire</p>
+          <input type="text"
+              ref={searchText}
+              className="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 sm:text-base"
+              placeholder={lang[langKey].gptSearchPlaceholder}
+              value={key}
+              onChange={(e) => setKey(e.target.value)}/>
 
         </form>
       </div>
